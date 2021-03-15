@@ -1,31 +1,32 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
-include _ROOT_PATH.'/app/security/check.php';
 
-function getParams(&$kwota, &$lata, &$opr){
+require_once _ROOT_PATH.'/lib/smarty/smarty.class.php';
+
+function getParams(&$form){
     //warunek ? co jesli prawda : co jesli falsz //pobranie paramaetrow
-    $kwota = isset($_REQUEST['kwota']) ? $_REQUEST['kwota'] : null;
-    $lata = isset($_REQUEST['lata']) ? $_REQUEST['lata'] : null;
-    $opr = isset($_REQUEST['opr']) ? $_REQUEST['opr'] : null;
+    $form['kwota'] = isset($_REQUEST['kwota']) ? $_REQUEST['kwota'] : null;
+    $form['lata'] = isset($_REQUEST['lata']) ? $_REQUEST['lata'] : null;
+    $form['opr']= isset($_REQUEST['opr']) ? $_REQUEST['opr'] : null;
 }
 
-function validate(&$kwota,&$lata,&$opr,&$messages){
+function validate(&$form,&$messages){
     //Sprawdzenie czy wsysktie parametry podane 
-    if(! (isset($kwota) && isset($lata) && isset($opr) )){
+    if(! (isset($form['kwota']) && isset($form['lata']) && isset($form['opr']) )){
         return false;
        
     }
           
     //Sprawdzenie ktore nie podane
-    if ( $kwota == "" ){
+    if ( $form['kwota'] == "" ){
 	$messages [] = 'nie podano kwoty';
     }
 
-    if ( $lata == "" ){
+    if ( $form['lata'] == "" ){
 	$messages [] = 'nie podano lat';
     }
 
-    if ( $opr == "" ){
+    if ( $form['opr'] == "" ){
 	$messages [] = 'nie podano oprocentowania';
     }
   
@@ -34,15 +35,15 @@ function validate(&$kwota,&$lata,&$opr,&$messages){
     }
    
     //Sprawdzenie czy sa liczbami całk/float
-    if( ! is_numeric ($kwota)){
+    if( ! is_numeric ($form['kwota'])){
 	$messages [] ='kwota nie jest liczba całkowitą';
     }
     
-    if( ! is_numeric ($lata)){
+    if( ! is_numeric ($form['lata'])){
 	$messages [] ='Lata nie jest liczba całkowitą';
     }
     
-    if( ! is_numeric ($opr)){
+    if( ! is_numeric ($form['opr'])){
 	$messages [] ='Oprocentowanie nie jest liczba';
     }
 
@@ -50,35 +51,43 @@ function validate(&$kwota,&$lata,&$opr,&$messages){
         else return true;
 }           
 
-function process(&$kwota, &$lata, &$opr, &$messages,&$result){
-    global $role;
+function process(&$form, &$messages,&$result){
     
-	$kwota = intval($kwota);
-	$lata = intval($lata);
-	$opr = floatval($opr);
+	$form['kwota'] = intval($form['kwota']);
+	$form['lata'] = intval($form['lata']);
+	$form['opr'] = floatval($form['opr']);
         
         
-    if($role == 'user'){
-        $result = ((($kwota * ($opr * 0.01)) + $kwota) / ($lata *12));
+ 
+        $result = ((($form['kwota'] * ($form['opr'] * 0.01)) + $form['kwota']) / ($form['lata'] *12));
         $result = round($result);
         
-    }
-    if($role == 'admin'){
-        $result =((($kwota * ($opr * 0.01)) + $kwota) / ($lata *12));
-        $result = round($result);
-    }
-}
+   
 
-$kwota = null;
-$lata = null;
-$opr = null;
+}
+$form = null;
 $result = null;
 $messages = array();
 
-getParams($kwota, $lata, $opr);
-
-if(validate($kwota, $lata, $opr, $messages)){
-	process($kwota, $lata, $opr, $messages, $result);
+getParams($form);
+if(validate($form, $messages)){
+	process($form, $messages, $result);
 }
 
-include 'calc_cred_view.php';
+$smarty = new Smarty();
+$smarty->assign('app_url',_APP_URL);
+$smarty->assign('root_path',_ROOT_PATH);
+$smarty->assign('page_title','Kalkulator kredytowy');
+$smarty->assign('page_description','Tutaj obliczysz ile nastepnych miesięcy bedziesz musial jesc suchy chleb ;-( ');
+$smarty->assign('page_footer','stopa kalkulatorka');
+$smarty->assign('page_header','Szablony Smarty');
+
+//$smarty->assign('hide_intro',$hide_intro);
+
+
+$smarty->assign('form',$form);
+$smarty->assign('result',$result);
+$smarty->assign('messages',$messages);
+
+// 5. Wywołanie szablonu
+$smarty->display(_ROOT_PATH.'/app/szablon.php');
