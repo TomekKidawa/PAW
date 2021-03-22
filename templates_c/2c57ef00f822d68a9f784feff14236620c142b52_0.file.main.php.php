@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-15 21:50:28
+/* Smarty version 3.1.39, created on 2021-03-20 18:15:57
   from 'C:\xampp\htdocs\php_project_paw3\templates\main.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_604fc894b3b027_99067687',
+  'unifunc' => 'content_60562dcdec1137_93581489',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2c57ef00f822d68a9f784feff14236620c142b52' => 
     array (
       0 => 'C:\\xampp\\htdocs\\php_project_paw3\\templates\\main.php',
-      1 => 1615638965,
+      1 => 1616260550,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_604fc894b3b027_99067687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60562dcdec1137_93581489 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -32,9 +32,9 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 <meta name="description" content="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_description']->value)===null||$tmp==='' ? "Opis domyślny" : $tmp);?>
 ">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+                <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+                <noscript><link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/css/noscript.css" /></noscript>
 	</head>
         <body>
@@ -53,8 +53,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 							</ul>
 						</div>
 						<div class="image">
-                                                    <img src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
-/images/kalkulator.jpg" alt="" />
+                                                    <img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/kalkulator.jpg" alt="alt" />
 						</div>
 					</section>
 
@@ -71,7 +71,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 							</ul>
 						</div>
 						<div class="image">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+                                                    <img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /images/skarbonka1.jpg" alt="" />
 						</div>
 					</section>
@@ -83,7 +83,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 				<!--KALKULATOR|| Seven -->
 					<section  class="wrapper style1 align-center" id="seven">
 					<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1633406421604fc894b39d45_66347051', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21117415760562dcdebd350_56900257', 'content');
 ?>
 
 					</section>
@@ -101,31 +101,31 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1633406421604fc894
 
 		<!-- Scripts -->
 			<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/js/jquery.min.js"><?php echo '</script'; ?>
 >
 			<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/js/jquery.scrollex.min.js"><?php echo '</script'; ?>
 >
 			<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/js/jquery.scrolly.min.js"><?php echo '</script'; ?>
 >
 			<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/js/browser.min.js"><?php echo '</script'; ?>
 >
 			<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/js/breakpoints.min.js"><?php echo '</script'; ?>
 >
 			<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/js/util.js"><?php echo '</script'; ?>
 >
 			<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/js/main.js"><?php echo '</script'; ?>
 >
 
@@ -134,12 +134,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1633406421604fc894
 	</body>
 </html><?php }
 /* {block 'content'} */
-class Block_1633406421604fc894b39d45_66347051 extends Smarty_Internal_Block
+class Block_21117415760562dcdebd350_56900257 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1633406421604fc894b39d45_66347051',
+    0 => 'Block_21117415760562dcdebd350_56900257',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
