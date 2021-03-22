@@ -5,8 +5,8 @@
 		<meta charset="utf-8" />
                 <meta name="description" content="{$page_description|default:"Opis domyślny"}">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{$app_url}/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="{$app_url}/assets/css/noscript.css" /></noscript>
+                <link rel="stylesheet" href="{$conf->app_url}/assets/css/main.css" />
+                <noscript><link rel="stylesheet" href="{$conf->app_url}/assets/css/noscript.css" /></noscript>
 	</head>
         <body>
             	<body class="is-preload">
@@ -23,7 +23,7 @@
 							</ul>
 						</div>
 						<div class="image">
-                                                    <img src="{$app_url}/images/kalkulator.jpg" alt="" />
+                                                    <img src="{$conf->app_url}/images/kalkulator.jpg" alt="alt" />
 						</div>
 					</section>
 
@@ -40,7 +40,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="{$app_url}/images/skarbonka1.jpg" alt="" />
+                                                    <img src="{$conf->app_url}/images/skarbonka1.jpg" alt="" />
 						</div>
 					</section>
 			
@@ -64,13 +64,13 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="{$app_url}/assets/js/jquery.min.js"></script>
-			<script src="{$app_url}/assets/js/jquery.scrollex.min.js"></script>
-			<script src="{$app_url}/assets/js/jquery.scrolly.min.js"></script>
-			<script src="{$app_url}/assets/js/browser.min.js"></script>
-			<script src="{$app_url}/assets/js/breakpoints.min.js"></script>
-			<script src="{$app_url}/assets/js/util.js"></script>
-			<script src="{$app_url}/assets/js/main.js"></script>
+			<script src="{$conf->app_url}/assets/js/jquery.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/jquery.scrollex.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/jquery.scrolly.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/browser.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/breakpoints.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/util.js"></script>
+			<script src="{$conf->app_url}/assets/js/main.js"></script>
 
  
        
