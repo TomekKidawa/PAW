@@ -1,5 +1,6 @@
-<?php
-class   Config{
+<?php namespace core;
+
+class Config{
     public $rooth_path;
     public $server_name;
     public $server_url;
