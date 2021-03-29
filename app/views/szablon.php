@@ -1,4 +1,5 @@
-{extends file=$conf->root_path|cat:"/templates/main.php"}
+{extends file="main.html"}
+{* przy zdefiniowanych folderach nie trzeba już podawać pełnej ścieżki *}
 
 {block name=footer}przykladowa tresc stopki z szablonu{/block}
 
