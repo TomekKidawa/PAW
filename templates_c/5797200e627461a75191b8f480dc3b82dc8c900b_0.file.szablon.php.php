@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-26 14:01:38
+/* Smarty version 3.1.39, created on 2021-04-08 19:02:55
   from 'C:\xampp\htdocs\php_project_paw3\app\views\szablon.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_605ddb32dc9471_70841685',
+  'unifunc' => 'content_606f373fb37e36_66401165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5797200e627461a75191b8f480dc3b82dc8c900b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\php_project_paw3\\app\\views\\szablon.php',
-      1 => 1616763565,
+      1 => 1617901163,
       2 => 'file',
     ),
   ),
@@ -20,31 +20,31 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_605ddb32dc9471_70841685 (Smarty_Internal_Template $_smarty_tpl) {
+function content_606f373fb37e36_66401165 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1180778313605ddb32dbbfa3_46889680', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_779931884606f373fb2ac65_15310695', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1713012431605ddb32dbcd74_53149185', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1372336173606f373fb2b9b3_94673967', 'content');
 ?>
                        
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'footer'} */
-class Block_1180778313605ddb32dbbfa3_46889680 extends Smarty_Internal_Block
+class Block_779931884606f373fb2ac65_15310695 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_1180778313605ddb32dbbfa3_46889680',
+    0 => 'Block_779931884606f373fb2ac65_15310695',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,12 +54,12 @@ przykladowa tresc stopki z szablonu<?php
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_1713012431605ddb32dbcd74_53149185 extends Smarty_Internal_Block
+class Block_1372336173606f373fb2b9b3_94673967 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1713012431605ddb32dbcd74_53149185',
+    0 => 'Block_1372336173606f373fb2b9b3_94673967',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,7 +67,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
  
 				<!--KALKULATOR|| Seven -->
-					
 <div class="inner medium">
         <h2>Kalkulator kredytowy</h2>
 
