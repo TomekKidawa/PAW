@@ -68,7 +68,7 @@ class CalcCtrl {
     
     
 
-    public function process(){
+    public function action_calcCompute(){
 
         $this->getparams();
                 
@@ -87,9 +87,14 @@ class CalcCtrl {
         
     $this->generateView();    
     }
+    public function action_calcShow(){
+		getMessages()->addInfo('Witaj w kalkulatorze');
+		$this->generateView();
+	}
     
     public function generateView(){
        
+        getSmarty()->assign('user',unserialize($_SESSION['user']));
         
         getSmarty()->assign('page_title','Kalkulator kredytowy');
         getSmarty()->assign('page_description','Tutaj obliczysz ile nastepnych miesięcy bedziesz musial jesc suchy chleb ;-( ');
@@ -100,7 +105,7 @@ class CalcCtrl {
         getSmarty()->assign('res',$this->result);
 
         // 5. Wywołanie szablonu
-        getSmarty()->display('szablon.php');
+        getSmarty()->display('szablon.tpl');
         
     }
 }
