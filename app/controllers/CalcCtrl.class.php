@@ -83,10 +83,39 @@ class CalcCtrl {
             $this->result->result = ((($this->form->kwota * ($this->form->opr * 0.01)) + $this->form->kwota) / ($this->form->lata *12));
             $this->result->result = round($this->result->result);
 
+            try{
+                $database = new \Medoo\Medoo([
+                    'database_type' => 'mysql',
+                    'database_name' => 'kalk',
+                    'server' => 'localhost',
+                    'username' => 'root',
+                    'password' => '',
+                    'charset' => 'utf8',
+                    'collation' => 'utf8_polish_ci',
+                    'port' => 3306,
+                    'option' => [
+                        \PDO::ATTR_CASE => \PDO::CASE_NATURAL,
+                        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
+                    ]
+                ]);
+
+                $database->insert("wynik", [
+                    "kwota" => $this->form->kwota,
+                    "lata" => $this->form->lata,
+                    "opr" => $this->form->opr,
+                    "rata" => $this->result->result,
+                    "data" => date("Y-m-d H:i:s")
+                ]);
+            }catch(\PDOException $ex){
+                getMessages()->addError("DB Error: ".$ex->getMessage());
+            
+            }
         }
         
     $this->generateView();    
     }
+    
+    
     public function action_calcShow(){
 		getMessages()->addInfo('Witaj w kalkulatorze');
 		$this->generateView();
