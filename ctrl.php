@@ -1,4 +1,5 @@
 <?php
+//php_08_bd
 require_once 'init.php';
 // Rozszerzenia:
 // Dodanie klasy Router oraz Route, które realizują idee przedstawione poprzednio, ale na wyższym poziomie i obiektowo.
